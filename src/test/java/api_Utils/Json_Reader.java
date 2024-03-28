@@ -16,7 +16,6 @@ import api_EnvVariables.EnvConstants_Program;
 
 public class Json_Reader {
 
-String file_Path_expectedResponseMsg="./src/test/resources/TestData/testdata_Program.json";
 	
 	public <T> String getJSONpayloadAsString(String testDataName, String filePath) {
 		String requestPayload="";
@@ -43,14 +42,5 @@ String file_Path_expectedResponseMsg="./src/test/resources/TestData/testdata_Pro
 		//System.out.println("Request payload is : "+requestPayload);
 		return requestPayload;
 	}	
-	
-	public static void main(String[] args) throws JsonMappingException, JsonProcessingException {
-		Json_Reader rest = new Json_Reader();
-		
-		//DataUtils data = new DataUtils();
-		String filePath = EnvConstants_Program.file_Path_ProgramTestdata;
-		String requestBody = rest.getJSONpayloadAsString("ValidProgram",filePath);
-		System.out.println("Request Payload is : "+requestBody);
-	}
 	
 }
