@@ -12,10 +12,11 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import api_EnvVariables.EnvConstants_Program;
+import api_EnvVariables.EnvConstants;
 
 public class Json_Reader {
 
+String file_Path_expectedResponseMsg=EnvConstants.file_Path_ProgramTestdata;
 	
 	public <T> String getJSONpayloadAsString(String testDataName, String filePath) {
 		String requestPayload="";
@@ -42,5 +43,13 @@ public class Json_Reader {
 		//System.out.println("Request payload is : "+requestPayload);
 		return requestPayload;
 	}	
+	
+	public static void main(String[] args) throws JsonMappingException, JsonProcessingException {
+		Json_Reader rest = new Json_Reader();
+		
+		String filePath = EnvConstants.file_Path_ProgramTestdata;
+		String requestBody = rest.getJSONpayloadAsString("ValidProgram",filePath);
+		System.out.println("Request Payload is : "+requestBody);
+	}
 	
 }

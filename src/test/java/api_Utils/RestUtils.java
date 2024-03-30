@@ -8,7 +8,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import api_EnvVariables.EnvConstants_Program;
+import api_EnvVariables.EnvConstants;
 import io.restassured.RestAssured;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
@@ -16,19 +16,18 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
-
 public class RestUtils {
 
-/* Build the request and attach restassured logs in logFILE */
+	/* Build the request and attach restassured logs in logFILE */
 	
 	public RequestSpecification getRequestSpec() throws FileNotFoundException {
-		RestAssured.baseURI = EnvConstants_Program.qaEnvironmentbaseURI;
-		PrintStream log = new PrintStream(new FileOutputStream("Team13_HackNest_RestAssuredLogs.txt"));
+		RestAssured.baseURI = EnvConstants.qaEnvironmentbaseURI;
+		PrintStream log = new PrintStream(new FileOutputStream("RestAPIHackathonLogs.txt"));
 		
 		RequestSpecification req=RestAssured.given().auth().none()
 								//.accept(ContentType.JSON)
-								.filter(RequestLoggingFilter.logRequestTo(log)).filter(ResponseLoggingFilter.logResponseTo(log))
-								.contentType(ContentType.JSON);						
+				.filter(RequestLoggingFilter.logRequestTo(log)).filter(ResponseLoggingFilter.logResponseTo(log))
+				.contentType(ContentType.JSON);							
 		return req;							
 	}
 	
@@ -54,9 +53,16 @@ public class RestUtils {
 		return response;
 	}
 	
-	/* Reusable code for HTTP_GET_REQUEST with auth-token and path parameter */
+	/* Reusable code for HTTP_GET_REQUEST with auth-token and String path parameter */
 	
 	public Response getByParameter(RequestSpecification reqSpec,String authToken,String paramValue,String endPoint) {
+		Response response = reqSpec.header("Authorization","Bearer "+authToken).pathParam("paramKey", paramValue).when().get(endPoint+"/{paramKey}");
+		return response;
+	}
+	
+	/* Reusable code for HTTP_GET_REQUEST with auth-token and int path parameter */
+	
+	public Response getByParameter(RequestSpecification reqSpec,String authToken,int paramValue,String endPoint) {
 		Response response = reqSpec.header("Authorization","Bearer "+authToken).pathParam("paramKey", paramValue).when().get(endPoint+"/{paramKey}");
 		return response;
 	}
@@ -64,6 +70,13 @@ public class RestUtils {
 	/* Reusable code for HTTP_DELETE_REQUEST with auth-token and path parameter */
 	
 	public Response deleteByParameter(RequestSpecification reqSpec,String authToken,String paramValue, String endPoint) {
+		Response response = reqSpec.header("Authorization","Bearer "+authToken).pathParam("paramKey", paramValue).when().delete(endPoint+"/{paramKey}");	
+		return response;
+	}
+	
+	/* Reusable code for HTTP_DELETE_REQUEST with auth-token and int path parameter */
+	
+	public Response deleteByParameter(RequestSpecification reqSpec,String authToken,int paramValue, String endPoint) {
 		Response response = reqSpec.header("Authorization","Bearer "+authToken).pathParam("paramKey", paramValue).when().delete(endPoint+"/{paramKey}");	
 		return response;
 	}
@@ -77,7 +90,7 @@ public class RestUtils {
 	}
 	
 	/* Reusable code for reading response in POJO class */
-	
+	//not tested yet
 	public <T> T getResponseInObject(Response response, Class<T> responseType) throws JsonMappingException, JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
         T objectResponse = mapper.readValue(response.getBody().asString(), responseType);
@@ -90,6 +103,10 @@ public class RestUtils {
 		String reqString = response.jsonPath().getString(req).trim();
 		return reqString;
 		
+	}
+	
+	public int getStatusCode(Response response) {
+		return response.getStatusCode();
 	}
 	
 }

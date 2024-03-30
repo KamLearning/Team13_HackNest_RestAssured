@@ -19,11 +19,13 @@ public class API_BaseSetUp {
 	public RequestSpecification requestSpecification() throws FileNotFoundException {
 		PrintStream log = new PrintStream(new FileOutputStream("Team13_HackNest_RestAssuredLogs.txt"));
 
-		req = new RequestSpecBuilder().setBaseUri("https://lms-marchapi-hackathon-a258d2bbd43b.herokuapp.com/lms").addQueryParam("null", "null")
+		RequestSpecification req = new RequestSpecBuilder().setBaseUri("https://lms-marchapi-hackathon-a258d2bbd43b.herokuapp.com/lms").addQueryParam("null", "null")
 				.addFilter(RequestLoggingFilter.logRequestTo(log)).addFilter(ResponseLoggingFilter.logResponseTo(log))
 				.setContentType(ContentType.JSON).build();
 
 		return req;
 	}
+	
+	
 
 }

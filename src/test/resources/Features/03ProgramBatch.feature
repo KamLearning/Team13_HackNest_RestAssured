@@ -66,17 +66,17 @@ Feature: Program Batch
   @tag11
   Scenario: Check if admin able to update a Batch with valid batchID and mandatory fields in request body
     Given Admin creates PUT Request with valid BatchId and Data
-    When Admin sends HTTPS Request  with endpoint
+    When Admin sends HTTPS Request with endpoint
     Then Admin receives 200 OK Status with updated value in response body
 
   @tag12
   Scenario: Check if admin able to update a Batch with a deleted batchID in the endpoint
     Given Admin creates PUT Request with deleted batch Id
-    When Admin sends HTTPS Request  with endpoint
+    When Admin sends HTTPS Request with endpoint
     Then Admin receives 200 Ok status with message
 
   @tag13
   Scenario: Check if admin able to delete a Batch with valid Batch ID
     Given Admin creates DELETE Request with valid BatchId
-    When Admin sends HTTPS Request  with endpoint
+    When Admin sends HTTPS Request with endpoint
     Then Admin receives 200 Ok status with message

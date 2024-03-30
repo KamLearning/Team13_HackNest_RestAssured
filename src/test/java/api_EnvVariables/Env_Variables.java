@@ -13,4 +13,8 @@ public class Env_Variables {
 	//public static String visa_status;
 	public static String token;
 	public static String Program_token;
+	public static int Program_ProgramID;
+	public static String Program_ProgramName;
+	
+	
 }
