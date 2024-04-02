@@ -20,7 +20,8 @@ public class Actions_UserRoleMap {
 	Json_Reader jsonReader = new Json_Reader();
 	String filePath = EnvConstants.file_Path_ProgramTestdata;
 	String loginEndpoint = EnvConstants.login_Endpoint;
-
+	
+	String getAllProgramsBatchesWithUsers_Endpoint = EnvConstants.getAllProgramsBatchesWithUsers_Endpoint;
 	String getURProgramBatchMapByUserIdEndpoint = EnvConstants.getURProgramBatchMapByUserId_Endpoint;
 	String deleteURProgramBatchMapByUserIdEndpoint = EnvConstants.deleteURProgramBatchMapByUserId_Endpoint;
 
@@ -54,77 +55,90 @@ public class Actions_UserRoleMap {
 		String token = restUtil.extractStringFromResponse(response, "token");
 		System.out.println("Token is " + token);
 		System.out.println("Setting token in Env Variables");
-		Env_Variables.UserRoleMap_token = token;
-		System.out.println("UserRoleMap_token: " + Env_Variables.UserRoleMap_token);
+		Env_Variables.token = token;
+		System.out.println("UserRoleMap_token: " + Env_Variables.token);
 	}
 
 	/* Delete user role program batch map by userId */
 	public Response deleteUrpbmByUserId(RequestSpecification reqSpec) {
-		String user_Id = Env_Variables.User_Id;
-		Response response = restUtil.deleteByParameter(reqSpec, Env_Variables.UserRoleMap_token, user_Id,
+		String user_Id = Env_Variables.userId;
+		Response response = restUtil.deleteByParameter(reqSpec, Env_Variables.token, user_Id,
 				deleteURProgramBatchMapByUserIdEndpoint);
 		return response;
 	}
 
 	/* Delete user role program batch map by invalid userId */
 	public Response deleteUrpbmByInValidUserId(RequestSpecification reqSpec) {
-		String invalidUserId = Env_Variables.Invalid_User_Id;
-		Response response = restUtil.deleteByParameter(reqSpec, Env_Variables.UserRoleMap_token, invalidUserId,
+		String invalidUserId = EnvConstants.invalidUserId;
+		Response response = restUtil.deleteByParameter(reqSpec, Env_Variables.token, invalidUserId,
 				deleteURProgramBatchMapByUserIdEndpoint);
 		return response;
 	}
 
 	/* Delete user role program batch map by valid userId without token */
 	public Response deleteUrpbmByUserIdWithoutToken(RequestSpecification reqSpec) {
-		String user_Id = Env_Variables.User_Id;
+		String user_Id = Env_Variables.userId;
 		Response response = restUtil.deleteByParameter(reqSpec, user_Id, "", deleteURProgramBatchMapByUserIdEndpoint);
 		return response;
 	}
 
 	/* Get user role map by userId */
 	public Response getUrmByUserId(RequestSpecification reqSpec) {
-		String user_Id = Env_Variables.User_Id;
-		Response response = restUtil.getByParameter(reqSpec, Env_Variables.UserRoleMap_token, user_Id,
+		String user_Id = Env_Variables.userId;
+		Response response = restUtil.getByParameter(reqSpec, Env_Variables.token, user_Id,
 				getURProgramBatchMapByUserIdEndpoint);
 		return response;
 	}
 
 	/* Get user role map by invalid userId */
 	public Response getUrmByInvalidUserId(RequestSpecification reqSpec) {
-		String invalidUser_Id = Env_Variables.Invalid_User_Id;
-		Response response = restUtil.getByParameter(reqSpec, Env_Variables.UserRoleMap_token, invalidUser_Id,
+		String invalidUser_Id = EnvConstants.invalidUserId;
+		Response response = restUtil.getByParameter(reqSpec, Env_Variables.token, invalidUser_Id,
 				getURProgramBatchMapByUserIdEndpoint);
 		return response;
 	}
 
 	/* Get user role map without auth by userId */
 	public Response getUrmByUserIdWithoutToken(RequestSpecification reqSpec) {
-		String user_Id = Env_Variables.User_Id;
+		String user_Id = Env_Variables.userId;
 		Response response = restUtil.getByParameter(reqSpec, "", user_Id, getURProgramBatchMapByUserIdEndpoint);
 		return response;
 	}
+	
+	/* Get assigned Program/Batches for all admins */
+	public Response getAllProgramBatches_AllAdmins(RequestSpecification reqSpec) {
+		
+			Response response = restUtil.getAll(reqSpec, Env_Variables.token, getAllProgramsBatchesWithUsers_Endpoint);
+			return response;
+		}
 
 	// Code for Program validations
 
-	// Verify status code
-	public void validateStatusCode(Response response, int status_Code) {
-		Assert.assertEquals(response.getStatusCode(), status_Code);
-	}
-
-	public static void validateStatusLine(Response response) {
-		String statusLine = response.getStatusLine();
-		System.out.println("statusLine is: " + statusLine);
-	}
-
-	// Verify response time
-	public void validateResponseTime(Response response) {
-		Assert.assertTrue(response.getTimeIn(TimeUnit.SECONDS) < 5);
-	}
-
-	// Verify Response Schema
-	public void validateResponseBodySchema(Response response, String FilePath) {
-
-		System.out.println("Validating response schema ");
-		response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(new File(FilePath)));
-	}
+	//Verify status code
+		public void validateStatusCode(Response response, int status_Code) {
+			Assert.assertEquals(response.getStatusCode(),status_Code);
+		}
+			
+		//Verify status line
+		public void validateStatusLine(Response response, String status_line) {
+			Assert.assertEquals(response.getStatusLine(), status_line);
+		}
+		
+		//Verify response time
+		public void validateResponseTime(Response response) {
+				Assert.assertTrue(response.getTimeIn(TimeUnit.SECONDS)<5);
+		}
+			
+		//Verify header
+		public void validateHeader(Response response) {
+			response.then().assertThat().header("Content-Type", "application/json");
+		}
+		
+		//Verify Response Schema
+		public void validateResponseBodySchema(Response response, String FilePath) {
+				
+			//LoggerLoad.info("Validating response schema ");
+			response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(new File(FilePath)));
+		}
+		
 }

@@ -31,7 +31,6 @@ Feature: UserRoleMap
     Given Admin creates Request for LMS on UserRoleMap
     When Admin sends HTTPS GET Request to retrieve Admin assigned to Program/Batch by AdminId
     Then Admin receives 200 OK
-    
 
   @getUserRoleMapByUserId_NE1
   Scenario: Check if admin is able to retreive assigned program batches for invalid AdminId
@@ -44,3 +43,9 @@ Feature: UserRoleMap
     Given Admin creates Request for LMS on UserRoleMap
     When Admin sends HTTPS GET Request to retrieve Admin assigned to Program/Batch without authorization by valid AdminID
     Then Admin receives status 401 with Unauthorized message
+
+  @getUserRoleMap_S1
+  Scenario: Check if admin is able to retreive all Admins with assigned program batches
+    Given Admin creates Request for LMS on UserRoleMap
+    When Admin sends GET Request to retrieve all Admins assigned to programs batches
+    Then Admin receives 200 OK
