@@ -1,0 +1,83 @@
+{
+	"definitions": {},
+	"$schema": "http://json-schema.org/draft-07/schema#", 
+	"$id": "https://example.com/object1711686894.json", 
+	"title": "Root", 
+	"type": "array",
+	"default": [],
+	"items":{
+		"$id": "#root/items", 
+		"title": "Items", 
+		"type": "object",
+		"required": [
+			"programId",
+			"programName",
+			"programDescription",
+			"programStatus",
+			"creationTime",
+			"lastModTime"
+		],
+		"properties": {
+			"programId": {
+				"$id": "#root/items/programId", 
+				"title": "Programid", 
+				"type": "integer",
+				"examples": [
+					16213
+				],
+				"default": 0
+			},
+			"programName": {
+				"$id": "#root/items/programName", 
+				"title": "Programname", 
+				"type": "string",
+				"default": "",
+				"examples": [
+					"Java-Program"
+				],
+				"pattern": "^.*$"
+			},
+			"programDescription": {
+				"$id": "#root/items/programDescription", 
+				"title": "Programdescription", 
+				"type": "string",
+				"default": "",
+				"examples": [
+					"Java-Program"
+				],
+				"pattern": "^.*$"
+			},
+			"programStatus": {
+				"$id": "#root/items/programStatus", 
+				"title": "Programstatus", 
+				"type": "string",
+				"default": "",
+				"examples": [
+					"Active"
+				],
+				"pattern": "^.*$"
+			},
+			"creationTime": {
+				"$id": "#root/items/creationTime", 
+				"title": "Creationtime", 
+				"type": "string",
+				"default": "",
+				"examples": [
+					"2023-12-14T18:36:46.264+00:00"
+				],
+				"pattern": "^.*$"
+			},
+			"lastModTime": {
+				"$id": "#root/items/lastModTime", 
+				"title": "Lastmodtime", 
+				"type": "string",
+				"default": "",
+				"examples": [
+					"2023-12-14T18:36:46.264+00:00"
+				],
+				"pattern": "^.*$"
+			}
+		}
+	}
+
+}

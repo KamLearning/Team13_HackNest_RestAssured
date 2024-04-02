@@ -19,11 +19,11 @@ public class Env_Variables {
 	public static String userId;
 	public static String roleId;
 	public static String userId_batchId;
-	public static String UserRoleMap_token;	
-	// Batch Variables
+	public static String UserRoleMap_token;
+
+		// Batch Variables
 	public static int Batch_Id;
 	public static String Batch_Name;
 	public static String batch_token;
 	public static String Batch_Program_Id; 
-	
 }
