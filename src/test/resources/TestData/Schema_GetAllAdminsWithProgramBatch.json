@@ -1,0 +1,47 @@
+{
+	"title": "Root", 
+	"type": "array",
+	"default": [],
+	"items":{
+		"title": "Items", 
+		"type": "object",
+		"required": [
+			"userId",
+			"roleId",
+			"programId",
+			"batchId",
+			"userRoleProgramBatchStatus"
+		],
+		"properties": {
+			"userId": {
+				"title": "Userid", 
+				"type": "string",
+				"default": "",
+				"pattern": "^.*$"
+			},
+			"roleId": {
+				"title": "Roleid", 
+				"type": "string",
+				"default": "",
+				"pattern": "^.*$"
+			},
+			"programId": {
+				"title": "Programid", 
+				"type": "integer",
+				"default": 0
+			},
+			"batchId": {
+				"title": "Batchid", 
+				"type": "integer",
+				"default": 0
+			},
+			"userRoleProgramBatchStatus": {
+				"title": "Userroleprogrambatchstatus", 
+				"type": "string",
+				"default": "",
+				"pattern": "^.*$"
+			}
+		}
+	}
+
+}

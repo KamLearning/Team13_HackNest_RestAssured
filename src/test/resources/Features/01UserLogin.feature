@@ -48,4 +48,3 @@ Feature: User LogIn and User logout
     Given Admin creates request to Logout with No Auth
     When Admin calls Get Https method with valid endpoint
     Then Admin receives 401 unauthorized
-

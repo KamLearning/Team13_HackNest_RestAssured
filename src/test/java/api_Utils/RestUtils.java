@@ -175,13 +175,15 @@ public class RestUtils {
 		return response;
 	}
 	
-/* Reusable code for HTTP_GET_REQUEST with noAuthtoken */
+
+	/* Reusable code for HTTP_GET_REQUEST with noAuthtoken */
 	
 	public Response getAllNoAuth(RequestSpecification reqSpec, String endPoint) {
 		Response response = reqSpec.when().get(endPoint);
 		return response;
 	}
-	/* Reusable code for HTTP_DELETE_REQUEST with auth-token and String path parameter */
+
+  /* Reusable code for HTTP_DELETE_REQUEST with auth-token and String path parameter */
 	
 	public Response deleteByParameter(RequestSpecification reqSpec,String authToken,String paramValue, String endPoint) {
 		Response response = reqSpec.header("Authorization","Bearer "+authToken).pathParam("paramKey", paramValue).when().delete(endPoint+"/{paramKey}");	
