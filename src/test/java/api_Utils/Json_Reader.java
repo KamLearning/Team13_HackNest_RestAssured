@@ -7,15 +7,16 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import api_EnvVariables.EnvConstants_Program;
+import api_EnvVariables.EnvConstants;
+
 
 public class Json_Reader {
 
+String file_Path_expectedResponseMsg=EnvConstants.file_Path_ProgramTestdata;
 	
 	public <T> String getJSONpayloadAsString(String testDataName, String filePath) {
 		String requestPayload="";
@@ -43,4 +44,17 @@ public class Json_Reader {
 		return requestPayload;
 	}	
 	
+	public <T> T readJsonInRequestPOJO(String jsonBody, Class<T> targetClass) {
+        ObjectMapper objectMapper = new ObjectMapper();
+		
+		try {
+            return objectMapper.readValue(jsonBody, targetClass);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+	}
+	public static void main(String[] args) {
+		
+	}
 }
