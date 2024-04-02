@@ -19,6 +19,6 @@ public class Env_Variables {
 	public static int Batch_Id;
 	public static String Batch_Name;
 	public static String batch_token;
-	
+	public static String Batch_Program_Id; 
 	
 }

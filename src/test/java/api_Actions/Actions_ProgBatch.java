@@ -6,8 +6,12 @@ import java.util.concurrent.TimeUnit;
 
 import org.testng.Assert;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+
 import api_EnvVariables.EnvConstants;
 import api_EnvVariables.Env_Variables;
+import api_POJO.API_Pojo_ProgBatch;
 import api_Utils.Json_Reader;
 import api_Utils.RestUtils;
 import io.restassured.module.jsv.JsonSchemaValidator;
@@ -42,7 +46,7 @@ public class Actions_ProgBatch {
 		System.out.println("Login request Body is : " + requestBody);
 		Response response = restUtil.create(reqSpec, requestBody, loginEndpoint);
 
-		System.out.println("Login response  Body is : " + response );
+		System.out.println("Login response  Body is : " + response);
 		return response;
 	}
 
@@ -59,16 +63,11 @@ public class Actions_ProgBatch {
 
 	public Response createBatch(RequestSpecification reqSpec, String testDataName) throws FileNotFoundException {
 
-		System.out.println(testDataName);
 		String requestBody = jsonReader.getJSONpayloadAsString(testDataName, filePath);
-		System.out.println("batch request Body is : " + requestBody);
 
-		Response response = restUtil.create(reqSpec, token, requestBody, EnvConstants.Create_New_Batch);
+		Response response = restUtil.create(reqSpec, Env_Variables.batch_token, requestBody,
+				EnvConstants.Create_New_Batch);
 
-		String batchID = restUtil.extractStringFromResponse(response, "batchId");
-
-		System.out.println("batch ID is " + batchID);
-		System.out.println("Response Body is " + response.asPrettyString());
 		return response;
 	}
 
@@ -78,33 +77,70 @@ public class Actions_ProgBatch {
 		return response;
 	}
 
-	/* Get All batchs by batchID */
-	public Response getbatchBybatchID(RequestSpecification reqSpec) {
-		int batchID = Env_Variables.Batch_Id;
-		Response response = restUtil.getByParameter(reqSpec, Env_Variables.batch_token, batchID,
+	public void SetbatchId(Response response) {
+		String batchId = restUtil.extractStringFromResponse(response, "batchId");
+		Env_Variables.Batch_Id = Integer.valueOf(batchId);
+		System.out.println("Env_Variables.Batch_Id  " + Env_Variables.Batch_Id );
+			
+
+		String batchName = restUtil.extractStringFromResponse(response, "batchName");
+		Env_Variables.Batch_Name = batchName;
+
+		System.out.println("Env_Variables.Batch_Name  " + Env_Variables.Batch_Name );
+			
+
+		String programId = restUtil.extractStringFromResponse(response, "programId");
+		Env_Variables.Batch_Program_Id = programId;
+
+		System.out.println("Env_Variables.Batch_Program_Id  " + Env_Variables.Batch_Program_Id );
+			
+	
+	
+	
+	}
+
+	/* Get All batchs by batchId */
+	public Response getbatchBybatchId(RequestSpecification reqSpec) {
+		int batchId = Env_Variables.Batch_Id;
+		Response response = restUtil.getByParameter(reqSpec, Env_Variables.batch_token, batchId,
 				EnvConstants.Get_Batch_by_BatchId);
 		return response;
 	}
 
-	/* Get All batchs by batchID */
-	public Response getbatchByName(RequestSpecification reqSpec) {
-		String batchName = Env_Variables.Batch_Name;
-		
-		Response response = restUtil.getByParameter(reqSpec, Env_Variables.batch_token, batchName,
-				EnvConstants.Get_Batch_by_BatchName );
+	/* Get All batchs by batchId */
+	public Response getbatchByProgramId(RequestSpecification reqSpec) {
+		String programId = Env_Variables.Batch_Program_Id;
+		Response response = restUtil.getByParameter(reqSpec, Env_Variables.batch_token, programId,
+				EnvConstants.Get_Batch_by_ProgramId);
 		return response;
 	}
-	
-	
-	/* Delete batch by batchID */
-	public Response deletebatchBybatchID(RequestSpecification reqSpec) {
-		int batchID = Env_Variables.Batch_Id;
-		Response response = restUtil.deleteByParameter(reqSpec, Env_Variables.batch_token, batchID,
-				EnvConstants.Delete_batch_by_BatchId);
+
+	/* Get All batchs by batchId */
+	public Response getbatchByName(RequestSpecification reqSpec) {
+		String batchName = Env_Variables.Batch_Name;
+
+		Response response = restUtil.getByParameter(reqSpec, Env_Variables.batch_token, batchName,
+				EnvConstants.Get_Batch_by_BatchName);
 		return response;
 	}
 
  
+//	public Response updateBatch(RequestSpecification reqSpec) throws JsonMappingException, JsonProcessingException {
+//		string batchId = Env_Variables.Batch_Id;
+//		
+//		
+//		Response response = restUtil.updateByParameter(reqSpec, Env_Variables.batch_token,"batchId", batchId,
+//				EnvConstants.Delete_batch_by_batchId);
+//		return response;
+//	}
+
+	/* Delete batch by batchId */
+	public Response deletebatchBybatchId(RequestSpecification reqSpec) {
+		int batchId = Env_Variables.Batch_Id;
+		Response response = restUtil.deleteByParameter(reqSpec, Env_Variables.batch_token, batchId,
+				EnvConstants.Delete_batch_by_BatchId);
+		return response;
+	}
 
 	/*
 	 * ==============================Code for batch

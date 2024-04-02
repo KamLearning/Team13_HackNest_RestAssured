@@ -10,10 +10,10 @@ Feature: Program Batch
   @tag2
   Scenario: Check if admin able to create a Batch with
            valid endpoint and request body (non existing values)
-
     Given Admin creates POST Request  with valid data in request body for batch
     When Admin sends HTTPS Request with endpoint for batch
     Then Admin receives 201 Created Status with response body for Batch
+
 
   @tag3
   Scenario: Check if admin able to create a batch with missing additional fields

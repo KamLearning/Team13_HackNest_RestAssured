@@ -1,23 +1,29 @@
 package api_POJO;
 
 public class API_Pojo_ProgBatch {
+	private int batchId;
+	private String batchDescription;
+	private String batchName;
+	private int batchNoOfClasses;
+	private String batchStatus;
+	private int programId;
+	private String programName;
 
-	String batchName;
-	int batchNoOfClasses;
-	String batchStatus;
-	int programId;
-	String programName;
-
-	int id;
-
-	public int getId() {
-		return id;
+	public int getBatchId() {
+		return batchId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setBatchId(int id) {
+		this.batchId = id;
 	}
 
+	public String getBatchDescription() {
+		return batchDescription;
+	}
+
+	public void setBatchDescription(String desc) {
+		this.batchDescription = desc;
+	}
 	public String getBatchName() {
 		return batchName;
 	}
