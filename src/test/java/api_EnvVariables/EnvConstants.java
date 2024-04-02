@@ -47,8 +47,41 @@ public class EnvConstants {
 	public static final String existingProgramNameErrorMsg = "cannot create program , since already exists";
 	public static final String deleteInvalidProgramNameErrorMessage = "no record found with programName";
 
-/*==================================File Paths for Program-Batch==================================================================*/
+	/*==================================File Paths for Program-Batch==================================================================*/
 	public static final String getAllProgramsBatchesWithUsers_Endpoint="/userRoleProgramBatchMap";
-	
-	
+	public static final String file_Path_Schema_GetAllAdminsUserRoleMap = "./src/test/resources/TestData/Schema_GetAllAdminsWithProgramBatch.json";
+/*==================================File Paths for User Schema==================================================================*/
+	public static final String file_Path_userSchema_Post="./src/test/resources/TestData/userSchema_Post.json";
+	public static final String file_Path_userSchema_GetById="./src/test/resources/TestData/userSchema_GetById.json";
+			
+			
+/*==================================User End Points=========================================================*/	
+	public static final String GetAllRoles ="/roles";
+	public static final String GetAllUsers ="/users";
+	public static final String GetUserbyID ="/users/";
+	public static final String GetAllActiveUsers ="/users/activeUsers";
+	public static final String GetCountOfActiveInactive ="/users/byStatus";
+	public static final String GetCountOfActiveInactiveID ="/users/byStatus/";
+	public static final String GetUserByProBatch ="/users/programBatch/";
+	public static final String GetUserByProg ="/users/programs/";
+	public static final String GetAllUsersWithRoles ="/users/roles";
+	public static final String GetUsersByFilter ="/v2/users";
+	public static final String GetUserByRoleID ="/users/roles/";
+	public static final String UpdateUserByUserId ="/users/";
+	public static final String UpdateUserLoginStatus ="/users/userLogin/";
+	public static final String UpdateUserRoleStatus ="/users/roleStatus/";
+	public static final String UpdateUserRoleProgBatch ="/users/roleProgramBatchStatus/";
+	public static final String UpdateUserRoleID ="/users/roleId/";
+	public static final String UpdateUser ="/users/";
+	public static final String CreateUsers ="/users/roleStatus";
+	public static final String DeleteUser ="/users/";	
+			
+/*==================================File Paths For UserLogin==================================================================*/
+	public static final String file_Path_Schema_Login="./src/test/resources/TestData/Schema_Login.json";                                                           
+	public static final String logout_Endpoint = "/logoutlms";
+					
+/*==================================UserRoleMap End Points============================================================*/	
+
+	public static final String getURProgramBatchMapByUserId_Endpoint = "/userRoleProgramBatchMap/{userId}";
+	public static final String deleteURProgramBatchMapByUserId_Endpoint = "/userRoleProgramBatchMap/deleteAll/{userId}";
 }
