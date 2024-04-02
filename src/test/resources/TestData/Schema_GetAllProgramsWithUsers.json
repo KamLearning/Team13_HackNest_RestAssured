@@ -1,0 +1,238 @@
+{
+	"definitions": {},
+	"$schema": "http://json-schema.org/draft-07/schema#", 
+	"$id": "https://example.com/object1711687291.json", 
+	"title": "Root", 
+	"type": "array",
+	"default": [],
+	"items":{
+		"$id": "#root/items", 
+		"title": "Items", 
+		"type": "object",
+		"required": [
+			"programId",
+			"programName",
+			"programDescription",
+			"programStatus",
+			"programUsers",
+			"creationTime",
+			"lastModTime"
+		],
+		"properties": {
+			"programId": {
+				"$id": "#root/items/programId", 
+				"title": "Programid", 
+				"type": "integer",
+				"examples": [
+					16210
+				],
+				"default": 0
+			},
+			"programName": {
+				"$id": "#root/items/programName", 
+				"title": "Programname", 
+				"type": "string",
+				"default": "",
+				"examples": [
+					"SMPO"
+				],
+				"pattern": "^.*$"
+			},
+			"programDescription": {
+				"$id": "#root/items/programDescription", 
+				"title": "Programdescription", 
+				"type": "string",
+				"default": "",
+				"examples": [
+					"Scrum Master Product Ownerfdsf"
+				],
+				"pattern": "^.*$"
+			},
+			"programStatus": {
+				"$id": "#root/items/programStatus", 
+				"title": "Programstatus", 
+				"type": "string",
+				"default": "",
+				"examples": [
+					"Active"
+				],
+				"pattern": "^.*$"
+			},
+			"programUsers": {
+				"$id": "#root/items/programUsers", 
+				"title": "Programusers", 
+				"type": "array",
+				"default": [],
+				"items":{
+					"$id": "#root/items/programUsers/items", 
+					"title": "Items", 
+					"type": "object",
+					"required": [
+						"userId",
+						"userFirstName",
+						"userLastName",
+						"userMiddleName",
+						"userPhoneNumber",
+						"userLocation",
+						"userTimeZone",
+						"userLinkedinUrl",
+						"userEduUg",
+						"userEduPg",
+						"userComments",
+						"userVisaStatus",
+						"userLoginEmail"
+					],
+					"properties": {
+						"userId": {
+							"$id": "#root/items/programUsers/items/userId", 
+							"title": "Userid", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"U25"
+							],
+							"pattern": "^.*$"
+						},
+						"userFirstName": {
+							"$id": "#root/items/programUsers/items/userFirstName", 
+							"title": "Userfirstname", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"John"
+							],
+							"pattern": "^.*$"
+						},
+						"userLastName": {
+							"$id": "#root/items/programUsers/items/userLastName", 
+							"title": "Userlastname", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"Doe"
+							],
+							"pattern": "^.*$"
+						},
+						"userMiddleName": {
+							"$id": "#root/items/programUsers/items/userMiddleName", 
+							"title": "Usermiddlename", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"D"
+							],
+							"pattern": "^.*$"
+						},
+						"userPhoneNumber": {
+							"$id": "#root/items/programUsers/items/userPhoneNumber", 
+							"title": "Userphonenumber", 
+							"type": "integer",
+							"examples": [
+								8934898897
+							],
+							"default": 0
+						},
+						"userLocation": {
+							"$id": "#root/items/programUsers/items/userLocation", 
+							"title": "Userlocation", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"Location"
+							],
+							"pattern": "^.*$"
+						},
+						"userTimeZone": {
+							"$id": "#root/items/programUsers/items/userTimeZone", 
+							"title": "Usertimezone", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"CST"
+							],
+							"pattern": "^.*$"
+						},
+						"userLinkedinUrl": {
+							"$id": "#root/items/programUsers/items/userLinkedinUrl", 
+							"title": "Userlinkedinurl", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"https://www.linkedin.com"
+							],
+							"pattern": "^.*$"
+						},
+						"userEduUg": {
+							"$id": "#root/items/programUsers/items/userEduUg", 
+							"title": "Usereduug", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"BE"
+							],
+							"pattern": "^.*$"
+						},
+						"userEduPg": {
+							"$id": "#root/items/programUsers/items/userEduPg", 
+							"title": "Useredupg", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"ME"
+							],
+							"pattern": "^.*$"
+						},
+						"userComments": {
+							"$id": "#root/items/programUsers/items/userComments", 
+							"title": "Usercomments", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"Senior Developer"
+							],
+							"pattern": "^.*$"
+						},
+						"userVisaStatus": {
+							"$id": "#root/items/programUsers/items/userVisaStatus", 
+							"title": "Uservisastatus", 
+							"type": "string",
+							"default": "",
+							"examples": [
+								"H4-EAD"
+							],
+							"pattern": "^.*$"
+						},
+						"userLoginEmail": {
+							"$id": "#root/items/programUsers/items/userLoginEmail", 
+							"title": "Userloginemail", 
+							"type": "null",
+							"default": null
+						}
+					}
+				}
+
+			},
+			"creationTime": {
+				"$id": "#root/items/creationTime", 
+				"title": "Creationtime", 
+				"type": "string",
+				"default": "",
+				"examples": [
+					"2023-11-03T16:39:17.715+00:00"
+				],
+				"pattern": "^.*$"
+			},
+			"lastModTime": {
+				"$id": "#root/items/lastModTime", 
+				"title": "Lastmodtime", 
+				"type": "string",
+				"default": "",
+				"examples": [
+					"2024-01-25T19:23:31.396+00:00"
+				],
+				"pattern": "^.*$"
+			}
+		}
+	}
+
+}

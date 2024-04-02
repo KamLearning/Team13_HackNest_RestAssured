@@ -1,0 +1,125 @@
+{
+	"LoginPayload" : {
+					    "password": "lmsHackathon@2024",
+  						"userLoginEmailId": "numpyninja@gmail.com"
+					  },
+    "ValidProgram" : {
+					    "programName": "M24_Phase2_00006",
+  						"programDescription": "RestfulAPI_Java_Cucumber_BDD",
+  						"programStatus": "Active"
+					  },				  
+    "InvalidProgramWithAlreadyExistingProgramName" :{ 
+    					"programName": "March24_Phase2_5_Updated",
+    					"programDescription": "RestfulAPI_Java_BDD",
+    					"programStatus": "Inactive"
+    					},
+    "ProgramWithMissingAdditionalField" :{ 
+    					"programName": "March24_Phase2_TestingMissingAdditionalField",
+  						"programStatus": "Inactive"
+    					},
+    "numbersInPrgramName" :{ 
+    					"programName": "454545454",
+    					"programDescription": "RestfulAPI_Java_BDD",
+    					"programStatus": "Inactive"
+    					},
+    "numbersInPrgramDescription" :{ 
+    					"programName": "March24_Phase2_numbersInPrgramDescription",
+    					"programDescription": "454545454",
+    					"programStatus": "Inactive"
+    					},
+    "invalidProgramStatus" :{ 
+    					"programName": "March24_Phase2_invalidProgramStatus",
+    					"programDescription": "RestfulAPI_Java_BDD_invalidProgramStatus",
+    					"programStatus": "NotActive"
+    					},
+    "specialCharactersInProgramName" :{ 
+    					"programName": "$$$$$$$$$",
+    					"programDescription": "RestfulAPI_Java_BDD",
+    					"programStatus": "Inactive"
+    					},
+    "specialCharactersInProgramDescription" :{ 
+    					"programName": "March24_Phase2_specialCharactersInProgramDescription",
+    					"programDescription": "$$$$$$$$$",
+    					"programStatus": "Inactive"
+    					},
+    "missingValuesInFields" :{ 
+    					"programName": "",
+    					"programDescription": "",
+    					"programStatus": ""
+    					},
+    "Update_numbersInPrgramName" :{
+  						"programId": 16906,
+  						"programName": "45454545",
+  						"programDescription": "RestAPI_Java_Cucumber_BDD",
+  						"programStatus": "Active",
+  						"creationTime": "2024-04-01T06:38:41.947+00:00",
+  						"lastModTime": "2024-04-01T06:38:41.947+00:00"
+						},
+    "Update_numbersInPrgramDescription" :{
+  						"programId": 16906,
+  						"programName": "Team13_Phase2API_Test001",
+  						"programDescription": "45454545",
+  						"programStatus": "Active",
+  						"creationTime": "2024-04-01T06:38:41.947+00:00",
+  						"lastModTime": "2024-04-01T06:38:41.947+00:00"
+						},
+    "Update_invalidProgramStatus" :{
+  						"programId": 16906,
+  						"programName": "Team13_Phase2API_Test001",
+  						"programDescription": "RestAPI_Java_Cucumber_BDD",
+  						"programStatus": "NotActive",
+  						"creationTime": "2024-04-01T06:38:41.947+00:00",
+  						"lastModTime": "2024-04-01T06:38:41.947+00:00"
+						},
+	"Update_validProgramStatus" :{
+  						"programId": 16906,
+  						"programName": "Team13_Phase2API_Test001",
+  						"programDescription": "RestAPI_Java_Cucumber_BDD",
+  						"programStatus": "Inactive",
+  						"creationTime": "2024-04-01T06:38:41.947+00:00",
+  						"lastModTime": "2024-04-01T06:38:41.947+00:00"
+						},
+    "Update_specialCharactersInProgramName" :{
+  						"programId": 16906,
+  						"programName": "$$$$$$$$",
+  						"programDescription": "RestAPI_Java_Cucumber_BDD",
+  						"programStatus": "Active",
+  						"creationTime": "2024-04-01T06:38:41.947+00:00",
+  						"lastModTime": "2024-04-01T06:38:41.947+00:00"
+						},
+    "Update_specialCharactersInProgramDescription" :{
+  						"programId": 16906,
+  						"programName": "Team13_Phase2API_Test001",
+  						"programDescription": "$$$$$$$$",
+  						"programStatus": "Active",
+  						"creationTime": "2024-04-01T06:38:41.947+00:00",
+  						"lastModTime": "2024-04-01T06:38:41.947+00:00"
+						},					
+	"ValidUpdateProgram" : {
+  						"programId": 16906,
+  						"programName": "Team13_Phase2API_Test001",
+  						"programDescription": "RestAPI_Java_Cucumber_BDD",
+  						"programStatus": "Active",
+  						"creationTime": "2024-04-01T06:38:41.947+00:00",
+  						"lastModTime": "2024-04-01T06:38:41.947+00:00"
+						},
+	"ValidUpdateProgram2" :	{
+    					"programId": 16670,
+    					"programName": "M24_Phase2_00002",
+    					"programDescription": "RestfulAPI_Java_BDD_00002",
+    					"programStatus": "Inactive",
+    					"creationTime": "2024-03-29T06:48:08.810+00:00",
+    					"lastModTime": "2024-03-29T06:48:08.810+00:00"
+						},
+	"ValidUpdateProgram3" :	{
+    					"programId": 16676,
+    					"programName": "M24_Phase2_00003",
+					    "programDescription": "RestfulAPI_Java_BDD_00003",
+					    "programStatus": "Active",
+					    "creationTime": "2024-03-29T08:10:26.518+00:00",
+					    "lastModTime": "2024-03-29T08:10:26.518+00:00"
+						}		  						  
+					    
+}
+
+
