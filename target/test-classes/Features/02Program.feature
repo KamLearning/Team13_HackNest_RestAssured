@@ -10,30 +10,61 @@ Feature: Program
     When Admin sends HTTPS POST Request to log in LMS with valid endpoint 
     Then Admin receives 200 OK Status with auth token in response body
     
+<<<<<<< HEAD
+  @tag2
+=======
   @Program_S2
+>>>>>>> master
   Scenario: Check if Admin able to create a program with valid endpoint and request body with Authorization
     Given Admin creates Request for LMS
     When Admin sends HTTPS POST Request and request Body with create program endpoint
     Then Admin receives 201 Created Status with response body
     
+<<<<<<< HEAD
+  @tag3
+=======
   @Program_S3
+>>>>>>> master
   Scenario: Check if Admin able to retrieve all programs with valid Endpoint
     Given Admin creates Request for LMS
     When Admin sends HTTPS GET Request to retrieve all programs with valid endpoint 
     Then Admin receives 200 OK Status with response body having all programs
   
+<<<<<<< HEAD
+  @tag4
+=======
   @Program_S4
+>>>>>>> master
   Scenario: Check if Admin able to retrieve a program with valid program ID
     Given Admin creates Request for LMS
     When Admin sends HTTPS GET Request to retrieve a program with endpoint and valid program ID
     Then Admin receives 200 OK Status with response body 
  	
+<<<<<<< HEAD
+ 	@tag5
+=======
  	@Program_S5
+>>>>>>> master
   Scenario: Check if Admin able to retrieve all programs with admins with valid Endpoint
     Given Admin creates Request for LMS
     When Admin sends HTTPS GET Request to retrieve all programs with admins with valid endpoint
     Then Admin receives 200 OK Status with response body having all programs with admins
     
+<<<<<<< HEAD
+  @tag6
+  Scenario: Check if Admin able to update a program with valid programID endpoint and valid request body
+    Given Admin creates Request for LMS 
+    When Admin sends HTTPS PUT Request having request Body with mandatory ,additional fields and valid endpoint
+    Then Admin receives 200 OK Status with updated value in response body
+    
+  @tag7
+  Scenario: Check if Admin able to update a program with valid program Name and request body
+    Given Admin creates Request for LMS
+    When Admin sends HTTPS PUT Request having valid request Body with mandatory ,additional fields with valid endpoint
+    Then Admin receives 200 OK Status with updated value in response body
+  
+  @tag8
+=======
   @Program_S6
   Scenario: Check if Admin able to update a program with valid programID endpoint and valid request body
     Given Admin creates Request for LMS 
@@ -47,16 +78,29 @@ Feature: Program
     Then Admin receives 200 OK Status with updated value in response body
   
   @Program_S8
+>>>>>>> master
   Scenario: Check if Admin able to delete a program with valid programName
     Given Admin creates Request for LMS
     When Admin sends HTTPS DELETE Request with valid programName and valid endpoint
     Then Admin receives 200 Ok status with message
  
+<<<<<<< HEAD
+ @tag9
+=======
  @Program_S9
+>>>>>>> master
   Scenario: Check if Admin able to delete a program with valid program ID
     Given Admin creates Request for LMS
     When Admin sends HTTPS DELETE Request with valid program ID and valid endpoint
     Then Admin receives 200 Ok status with message  
+<<<<<<< HEAD
+    
+ @tag10
+  Scenario: Check if Admin able to log out
+    Given Admin creates Request for LMS 
+    When Admin sends HTTPS LogOut Request with valid endpoint
+    Then Admin is log out successfully 
+=======
    
  @Program_S10_Negative_1
   Scenario Outline: Check if Admin able to perform operation on programAPI with invalid endpoint
@@ -209,4 +253,5 @@ Feature: Program
   | updateByProgramName 		|updateByProgramName_Endpoint			|		
   | deleteByProgramID 			|deleteByProgramID_Endpoint				|
   | deleteByProgramName 		|deleteByProgramName_Endpoint			|
+>>>>>>> master
                                                                                                                                                                                                                                                 

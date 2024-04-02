@@ -1,0 +1,23 @@
+{ 
+	 "ValidBatch": {
+					    "batchName": "Batch1_11021",
+     					"batchDescription": "Team_13_Batch Desc",
+        				"batchStatus": "Active",
+        				"batchNoOfClasses": 6,
+        				"programId": "17574"
+					  },
+					  
+	 "ValidBatch_Mandatory_Only": {
+					    "batchName": "Batch1_1412",
+        				"batchStatus": "Active",
+        				"batchNoOfClasses": 6,
+        				"programId": "17574"
+					  },
+	"InactiveProgramId": {
+					    "batchName": "Batch_Test_1_14",
+     					"batchDescription": "Team_14_Batch Desc",
+        				"batchStatus": "Active",
+        				"batchNoOfClasses": 6,
+        				"programId": "16209"
+					  }
+}

@@ -86,4 +86,15 @@ public class EnvConstants {
 
 	public static final String getURProgramBatchMapByUserId_Endpoint = "/userRoleProgramBatchMap/{userId}";
 	public static final String deleteURProgramBatchMapByUserId_Endpoint = "/userRoleProgramBatchMap/deleteAll/{userId}";
+
+	/*==================================Base URL & End Points (Batch module)==================================================================*/	
+    
+	public static final String Create_New_Batch = "/batches";
+	public static final String Get_All_Batches = "/batches";
+	public static final String Get_Batch_by_BatchId = "/batches/batchId";
+	public static final String Get_Batch_by_BatchName = "/batches/batchName";
+	public static final String Get_Batch_by_ProgramId = "/batches/program";
+	public static final String Update_by_BatchId = "/batches";
+	public static final String Delete_batch_by_BatchId= "/batches";
+	
 }
