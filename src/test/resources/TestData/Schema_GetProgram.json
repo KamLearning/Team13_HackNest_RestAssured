@@ -1,0 +1,49 @@
+{
+  "title": "Root",
+  "type": "object",
+  "required": [
+    "programId",
+    "programName",
+    "programDescription",
+    "programStatus",
+    "creationTime",
+    "lastModTime"
+  ],
+  "properties": {
+    "programId": {
+      "title": "Programid",
+      "type": "integer",
+      "default": 0
+    },
+    "programName": {
+      "title": "Programname",
+      "type": "string",
+      "default": "",
+      "pattern": "^.*$"
+    },
+    "programDescription": {
+      "title": "Programdescription",
+      "type": "string",
+      "default": "",
+      "pattern": "^.*$"
+    },
+    "programStatus": {
+      "title": "Programstatus",
+      "type": "string",
+      "default": "",
+      "pattern": "^.*$"
+    },
+    "creationTime": {
+      "title": "Creationtime",
+      "type": "string",
+      "default": "",
+      "pattern": "^.*$"
+    },
+    "lastModTime": {
+      "title": "Lastmodtime",
+      "type": "string",
+      "default": "",
+      "pattern": "^.*$"
+    }
+  }
+}

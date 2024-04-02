@@ -1,0 +1,31 @@
+{
+	"UserCreateR01" : {
+				"userComments": "TeamHackNest",
+				"userEduPg": "MS",
+				"userEduUg": "BS",
+				"userFirstName": "TeamHackNestFName",
+				"userId": "string",
+				"userLastName": "TeamHackNestLName",
+				"userLinkedinUrl": "www.linkedin.com/TeamHackNest",
+				"userLocation": "TeamHackNestLocation",
+				 "userLogin": {
+       				 "loginStatus": "LoggedIn",
+       				 "password": "lmsHackathon@2024",
+      				  "roleIds": [
+           			 "R01"
+       					 ],
+       				 "status": "Active",
+       				 "userLoginEmail": "TeamHackNest1@gmail.com"
+    				},
+
+				"userMiddleName": "TeamHackNestMName",
+				"userPhoneNumber": "0011223344",
+				"userRoleMaps": [
+				{
+				"roleId": "R01",
+				"userRoleStatus": "Active"
+				}
+				],
+				"userTimeZone": "MST",
+				"userVisaStatus": "H4-EAD"
+				}
