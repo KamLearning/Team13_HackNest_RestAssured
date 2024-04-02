@@ -2,6 +2,7 @@ package api_EnvVariables;
 
 public class Env_Variables {
 
+
 	public static int Program_Id;
 	public static String User_Id;
 	public static int Batch_Id;
@@ -12,5 +13,8 @@ public class Env_Variables {
 	//public static String time_zone;
 	//public static String visa_status;
 	public static String token;
+	public static String Program_token;
+	public static int Program_ProgramID;
+	public static String Program_ProgramName;
 	
 }

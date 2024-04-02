@@ -1,0 +1,40 @@
+{
+	"LoginPayload" : {
+					    "password": "lmsHackathon@2024",
+  						"userLoginEmailId": "numpyninja@gmail.com"
+					  },
+    "ValidProgram" : {
+					    "programName": "M24_Phase2_00006",
+  						"programDescription": "RestfulAPI_Java_BDD_00006",
+  						"programStatus": "Active"
+					  },
+	"ValidUpdateProgram1" : { 
+						"programId": 16669,
+    					"programName": "M24_Phase2_00001",
+    					"programDescription": "RestfulAPI_Java_BDD_00001",
+    					"programStatus": "Inactive",
+    					"creationTime": "2024-03-29T06:34:12.872+00:00",
+    					"lastModTime": "2024-03-29T06:34:12.872+00:00"
+					  },
+	"ValidUpdateProgram2" :	{
+    					"programId": 16670,
+    					"programName": "M24_Phase2_00002",
+    					"programDescription": "RestfulAPI_Java_BDD_00002",
+    					"programStatus": "Inactive",
+    					"creationTime": "2024-03-29T06:48:08.810+00:00",
+    					"lastModTime": "2024-03-29T06:48:08.810+00:00"
+						},
+	"ValidUpdateProgram3" :	{
+    					"programId": 16676,
+    					"programName": "M24_Phase2_00003",
+					    "programDescription": "RestfulAPI_Java_BDD_00003",
+					    "programStatus": "Active",
+					    "creationTime": "2024-03-29T08:10:26.518+00:00",
+					    "lastModTime": "2024-03-29T08:10:26.518+00:00"
+						}
+	
+								  						  
+					    
+}
+
+

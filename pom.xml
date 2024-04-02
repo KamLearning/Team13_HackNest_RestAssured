@@ -120,6 +120,11 @@
 			<scope>test</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>RestAPIHackathon2024</groupId>
+			<artifactId>RestAPIHackathon2024</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 	
 </project>

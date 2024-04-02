@@ -1,0 +1,37 @@
+{
+ "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "token": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "userId": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "roles": {
+      "type": "array",
+      "items": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "status": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "token",
+    "type",
+    "userId",
+    "email",
+    "roles",
+    "status"
+  ]
+}
