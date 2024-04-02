@@ -12,5 +12,7 @@ public class Env_Variables {
 	//public static String time_zone;
 	//public static String visa_status;
 	public static String token;
-	
+	public static String UserRoleMap_token;
+	public static String Invalid_User_Id = "9999";
+
 }
