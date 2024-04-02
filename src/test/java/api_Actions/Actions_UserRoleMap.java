@@ -111,6 +111,13 @@ public class Actions_UserRoleMap {
 			Response response = restUtil.getAll(reqSpec, Env_Variables.token, getAllProgramsBatchesWithUsers_Endpoint);
 			return response;
 		}
+	
+	/* Get assigned Program/Batches for all admins with no Auth */
+	public Response getAllProgramBatches_AllAdmins_NoAuth(RequestSpecification reqSpec) {
+
+		Response response = restUtil.getAll(reqSpec, "", getAllProgramsBatchesWithUsers_Endpoint);
+		return response;
+	}
 
 	// Code for Program validations
 

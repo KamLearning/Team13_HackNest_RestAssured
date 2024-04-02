@@ -24,7 +24,7 @@ public class API_StepDef_UserRoleMap {
 	RequestSpecification reqSpec;
 	Response response;
 	Actions_UserRoleMap urmActions = new Actions_UserRoleMap();
-	
+
 	String GetAllAdminsUserRoleMapSchema = EnvConstants.file_Path_Schema_GetAllAdminsUserRoleMap;
 
 	String OK = EnvConstants.OK_getUserRoleMap;
@@ -110,9 +110,10 @@ public class API_StepDef_UserRoleMap {
 	public void admin_sends_https_get_request_to_retrieve_admin_assigned_to_program_batch_without_authorization_by_valid_admin_id() {
 		urmActions.getUrmByUserIdWithoutToken(reqSpec);
 	}
-	
+
 	@When("Admin sends GET Request to retrieve all Admins assigned to programs batches")
-	public void admin_sends_get_request_to_retrieve_all_admins_assigned_to_programs_batches() throws FileNotFoundException {
+	public void admin_sends_get_request_to_retrieve_all_admins_assigned_to_programs_batches()
+			throws FileNotFoundException {
 //		LoggerLoad.info("Sending request to retrieve all Admins assigned to programs batches");
 		response = urmActions.getAllProgramBatches_AllAdmins(reqSpec);
 	}
@@ -120,10 +121,24 @@ public class API_StepDef_UserRoleMap {
 	@Then("Admin receives {int} OK")
 	public void Admin_receives_ok(Integer int1) {
 //		LoggerLoad.info("Validating retrieve all Admins assigned to programs batches");
-		urmActions.validateStatusCode(response,http_OK);
-		urmActions.validateStatusLine(response,OK);
+		urmActions.validateStatusCode(response, http_OK);
+		urmActions.validateStatusLine(response, OK);
 		urmActions.validateResponseTime(response);
 		urmActions.validateResponseBodySchema(response, GetAllAdminsUserRoleMapSchema);
+	}
+
+	@When("Admin sends HTTPS Get Request with valid endpoint and no authorization")
+	public void admin_sends_https_get_request_with_valid_endpoint_and_no_authorization() {
+//		LoggerLoad.info("Sending request to retrieve all Admins assigned to programs batches with no auth");
+		response = urmActions.getAllProgramBatches_AllAdmins_NoAuth(reqSpec);
+	}
+
+	@Then("Admin receives {int} Unauthorized for get")
+	public void admin_receives_unauthorized_for_get(Integer int1) {
+//		LoggerLoad.info("Validating retrieve all Admins assigned to programs batches with no auth");
+		// actions.validateStatusCode(response,http_OK);
+		urmActions.validateStatusLine(response, UnAuthorized);
+		urmActions.validateResponseTime(response);
 	}
 
 }

@@ -49,3 +49,9 @@ Feature: UserRoleMap
     Given Admin creates Request for LMS on UserRoleMap
     When Admin sends GET Request to retrieve all Admins assigned to programs batches
     Then Admin receives 200 OK
+
+  @getUserRoleMap_S2
+  Scenario: Check if admin is able to retreive all Admins with assigned program batches with No Authorization
+    Given Admin creates Request for LMS
+    When Admin sends HTTPS Get Request with valid endpoint and no authorization
+    Then Admin receives 401 Unauthorized for get
